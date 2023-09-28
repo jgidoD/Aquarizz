@@ -1,17 +1,19 @@
 import './LandingPage.css'
 import logo from '../assets/aquarizz-logo.png'
-import background from '../assets/background-svg.svg'
-
+import background from '../assets/background.svg'
+import browse from '../assets/browse.svg'
+import interact from '../assets/interact.svg'
+import showcase from '../assets/showcase.svg'
 function LandingPage () {
 
     return (
 <div className='main'>
-
-        <div className='contents'>
-        <div className='header'>
+<div className='header'>
             <img src={logo} className='logo' alt='logo'/>
-            <button className='getStarted'>Ged Started</button>
-        </div>
+            <button className='getStarted'>Get Started</button>
+</div>
+        <div className='contents'>
+
         
         <div className='content'>
             <div className='spanContainer'>
@@ -33,10 +35,32 @@ function LandingPage () {
         <div className='information'>
         <div className='information-contents'>
             <div className='logo'>
-
+                <img src={browse} />
             </div>
             <div className='description'>
-
+            <span>
+                Browse and discover something new!
+                </span>
+            </div>
+        </div>
+        <div className='information-contents'>
+            <div className='description'>
+                <span>
+                Connect with people with similar interests.
+                </span>
+            </div>
+            <div className='logo'>
+            <img src={interact} />
+            </div>
+        </div>
+        <div className='information-contents'>
+            <div className='logo'>
+                <img src={showcase}/>
+            </div>
+            <div className='description'>
+            <span>
+                Showcase and let people know about your designs.
+            </span>
             </div>
         </div>
         </div>
