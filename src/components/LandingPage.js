@@ -3,13 +3,20 @@ import Logo from "../assets/logo.svg";
 import Button from "./Button.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faUser, faLock } from "@fortawesome/free-solid-svg-icons";
+import { Routes, Route, Link } from "react-router-dom";
+import RegisterModal from "./RegisterModal";
+import { useState } from "react";
 
 export default function LandingPage() {
+  const [show, setShow] = useState(false);
+
   return (
     <div className="container">
       <header className="header">
         <span>
-          <img src={Logo} alt="aquarizz-logo" />
+          <Link to="/">
+            <img src={Logo} alt="aquarizz-logo" />
+          </Link>
         </span>
         <div className="contactUsBtnContainer">
           {/* <input className="contactUsBtn" type="button" value="Contact us" />
@@ -30,7 +37,10 @@ export default function LandingPage() {
           </span>
           <br />
           <br />
-          <Button className="signUpBtn">Sign up here!</Button>
+          <Button className="signUpBtn" onClick={() => setShow(true)}>
+            Join Now!
+          </Button>
+          <RegisterModal onClose={() => setShow(false)} show={show} />
         </div>
         <div className="heroForm">
           <div className="card">
@@ -59,6 +69,10 @@ export default function LandingPage() {
         </div>
       </main>
       <footer className="footer"></footer>
+
+      <Routes>
+        <Route path="/" element={LandingPage} />
+      </Routes>
     </div>
   );
 }
